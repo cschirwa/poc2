@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/healthy-dining/healthy-dining.iml" filepath="$PROJECT_DIR$/healthy-dining/healthy-dining.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poc2.iml" filepath="$PROJECT_DIR$/poc2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/points-manager/points-manager.iml" filepath="$PROJECT_DIR$/points-manager/points-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vrsa-gateway/vrsa-gateway.iml" filepath="$PROJECT_DIR$/vrsa-gateway/vrsa-gateway.iml" />
+    </modules>
+  </component>
+</project>

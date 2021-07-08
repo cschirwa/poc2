@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: vrsa-gateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: healthy-dining
+          uri: lb://healthy-dining
+          predicates:
+            - Path=/hd/**
+        - id: points-manager
+          uri: lb://points-manager
+          predicates:
+            - Path=/pm/**
+      default-filters:
+        - TokenRelay
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: "http://localhost:8099/auth/realms/vrsa"
+        registration:
+          vrsa-gateway:
+            provider: keycloak
+            client-id: vrsa-gateway
+            client-secret: 01a655fb-945e-49f5-a7c9-c0ac1e833196
+            authorization-grant-type: authorization_code
+#            authorization-grant-type: client_credentials
+#            authorization-grant-type: bearer-only
+            redirect-uri: http://localhost:9999/login/oauth2/code/vrsa-gateway
+#            redirectt-uri: ${spring.cloud.gateway.routes[0].uri}
+server:
+  port: 9999

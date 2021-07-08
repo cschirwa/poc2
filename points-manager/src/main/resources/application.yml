@@ -1,0 +1,11 @@
+server:
+  port: 7002
+
+spring:
+  application:
+    name: points-manager
+
+  cloud:
+    consul:
+      discovery:
+        instance-id: ${spring.application.name}-${random.int(1,99)}

@@ -1,0 +1,22 @@
+
+spring:
+  application:
+    name: healthy-dining
+
+  cloud:
+    consul:
+      discovery:
+        instance-id: ${spring.application.name}-${random.int(1,99)}
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: "http://localhost:8099/auth/realms/vrsa"
+server:
+  port: 7001
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
