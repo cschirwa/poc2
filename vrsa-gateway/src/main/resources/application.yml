@@ -2,6 +2,7 @@ spring:
   application:
     name: vrsa-gateway
 
+
   cloud:
     gateway:
       discovery:
@@ -12,7 +13,9 @@ spring:
         - id: healthy-dining
           uri: lb://healthy-dining
           predicates:
-            - Path=/hd/**
+            - Path=/healthy
+          filters:
+            - RewritePath=/healthy, /hd
         - id: points-manager
           uri: lb://points-manager
           predicates:
