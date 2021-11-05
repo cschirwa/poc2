@@ -7,6 +7,10 @@ spring:
     consul:
       discovery:
         instance-id: ${spring.application.name}-${random.int(1,99)}
+        register-health-check: true
+        health-check-timeout: 10s
+        health-check-interval: 5s
+        health-check-critical-timeout: 10s
   security:
     oauth2:
       resourceserver:

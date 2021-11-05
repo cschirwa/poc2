@@ -13,9 +13,9 @@ spring:
         - id: healthy-dining
           uri: lb://healthy-dining
           predicates:
-            - Path=/healthy
+            - Path=/xxxyyy
           filters:
-            - RewritePath=/healthy, /hd
+            - RewritePath=/xxxyyy, /hd
         - id: points-manager
           uri: lb://points-manager
           predicates:
